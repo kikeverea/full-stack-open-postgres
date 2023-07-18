@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 const { userFinder } = require('../util/middleware')
 
 router.get('/', async (req, res) => {
+  // Exercise 13.12: show user blogs -> already implemented
   const users = await User.findAll({
     include: {
       model: Blog,
