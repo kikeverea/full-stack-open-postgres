@@ -46,7 +46,7 @@ router.delete('/:id', userFinder, async (req, res) => {
   const user = req.user
 
   if (!user)
-    res.sendStatus(404)
+    return res.sendStatus(404)
 
   await user.destroy()
 

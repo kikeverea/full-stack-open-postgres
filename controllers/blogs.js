@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
 
 router.post('/', tokenExtractor, async (req, res) => {
   const user = await User.findOne({ where: { id: req.decodedToken.id }} )
-  // Exercise 13.10: link logged-in user to new blogs: already implemented
   const blog = await Blog.create({ ...req.body, userId: user.id })
   res.status(201).json(blog)
 })
@@ -18,7 +17,7 @@ router.put('/:id', blogFinder, async (req, res) => {
   const blog = req.blog
 
   if (!blog)
-    res.sendStatus(404)
+    return res.sendStatus(404)
 
   const likes = parseInt(req.body.likes)
 
@@ -30,11 +29,17 @@ router.put('/:id', blogFinder, async (req, res) => {
   res.sendStatus(204)
 })
 
-router.delete('/:id', blogFinder, async (req, res) => {
+router.delete('/:id', [blogFinder, tokenExtractor], async (req, res) => {
+  const user = await User.findOne({ where: { id: req.decodedToken.id }} )
   const blog = req.blog
 
   if (!blog)
-    res.sendStatus(404)
+    return res.sendStatus(404)
+
+  if (blog.userId !== user.id)
+    return res.status(401).json({
+      error: 'User not authorized to delete this blog'
+    })
 
   await blog.destroy()
 
