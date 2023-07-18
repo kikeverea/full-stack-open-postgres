@@ -32,8 +32,15 @@ const userFinder = async (req, res, next) => {
   next()
 }
 
+const errorHandler = (error, req, res, next) => {
+  res
+    .status(500)
+    .json({ error: error.message })
+}
+
 module.exports = {
   tokenExtractor,
   blogFinder,
-  userFinder
+  userFinder,
+  errorHandler
 }
