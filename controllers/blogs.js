@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', tokenExtractor, async (req, res) => {
   const user = await User.findOne({ where: { id: req.decodedToken.id }} )
+  // Exercise 13.10: link logged-in user to new blogs: already implemented
   const blog = await Blog.create({ ...req.body, userId: user.id })
   res.status(201).json(blog)
 })
