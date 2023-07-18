@@ -1,0 +1,31 @@
+### get all
+GET http://localhost:3001/api/users
+
+### create user
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "username": "kike2",
+  "name": "kike",
+  "password": "asd2"
+}
+
+### change username
+PUT http://localhost:3001/api/users/kike2
+Content-Type: application/json
+
+{
+  "username": "kike3"
+}
+
+### login user
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+"username": "kike2",
+"password": "asd2"
+}
+
+
