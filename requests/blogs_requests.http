@@ -1,5 +1,3 @@
-# token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtpa2UyIiwiaWQiOjIsImlhdCI6MTY4OTY5OTA4N30.JZINJQF_cGa6eBPWGL48V_FBe6WHWtCJKORnvVf7a3U
-
 ### get all blogs
 GET http://localhost:3001/api/blogs
 
@@ -9,15 +7,16 @@ GET http://localhost:3001/api/blogs?search=react
 ### create blog
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtpa2VAbWFpbC5jb20iLCJpZCI6MywiaWF0IjoxNjg5NzAyOTI5fQ.RyfXDOgI5-C5psAyvDtzynAJH5hNMJwsK3t8dL4J6Hg
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtpa2VAbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNjg5NzYyMzg3fQ.Ws1aYPS8qXo3nrKoAbNBE4EGTHF1G3VKS1RDA_jvYRg
 
 {
   "author": "Facebook",
   "url": "www.facebook.com",
-  "title": "How to spy on Everyone",
-  "likes": "1"
+  "title": "React Documentation",
+  "likes": "3500",
+  "year":  "2022"
 }
 
 ### delete blog
-DELETE http://localhost:3001/api/blogs/6
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtpa2VAbWFpbC5jb20iLCJpZCI6MywiaWF0IjoxNjg5NzAyOTI5fQ.RyfXDOgI5-C5psAyvDtzynAJH5hNMJwsK3t8dL4J6Hg
+DELETE http://localhost:3001/api/blogs/1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtpa2VAbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNjg5NzYyMzg3fQ.Ws1aYPS8qXo3nrKoAbNBE4EGTHF1G3VKS1RDA_jvYRg

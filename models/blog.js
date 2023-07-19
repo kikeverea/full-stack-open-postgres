@@ -23,6 +23,18 @@ Blog.init({
   likes: {
     type: DataTypes.INTEGER,
     defaultValue: '0'
+  },
+  year: {
+    type: DataTypes.INTEGER,
+    validate: {
+      validYear(value) {
+        const year = parseInt(value)
+        const thisYear = new Date().getFullYear()
+
+        if (year > thisYear)
+          throw new Error(`Invalid creation year: ${ year }. Creation year can't be in the future`)
+      }
+    }
   }
 }, {
   sequelize,
