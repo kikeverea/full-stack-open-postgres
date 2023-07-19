@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
+    "migartion:rollback": "node util/rollback.js",
     "test": "jest"
   },
   "repository": {
