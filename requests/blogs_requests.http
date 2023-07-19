@@ -1,19 +1,23 @@
 # token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtpa2UyIiwiaWQiOjIsImlhdCI6MTY4OTY5OTA4N30.JZINJQF_cGa6eBPWGL48V_FBe6WHWtCJKORnvVf7a3U
 
+### get all blogs
 GET http://localhost:3001/api/blogs
 
-###
+### get blogs with query string
+GET http://localhost:3001/api/blogs?search=react
+
+### create blog
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtpa2VAbWFpbC5jb20iLCJpZCI6MywiaWF0IjoxNjg5NzAyOTI5fQ.RyfXDOgI5-C5psAyvDtzynAJH5hNMJwsK3t8dL4J6Hg
 
 {
-  "author": "kike",
-  "url": "kike.com",
-  "title": "another blog",
-  "likes": "20"
+  "author": "Facebook",
+  "url": "www.facebook.com",
+  "title": "React Documentation",
+  "likes": "3500"
 }
 
-###
-DELETE http://localhost:3001/api/blogs/4
+### delete blog
+DELETE http://localhost:3001/api/blogs/6
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtpa2VAbWFpbC5jb20iLCJpZCI6MywiaWF0IjoxNjg5NzAyOTI5fQ.RyfXDOgI5-C5psAyvDtzynAJH5hNMJwsK3t8dL4J6Hg
