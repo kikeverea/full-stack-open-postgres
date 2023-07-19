@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kikeverea/full-stack-open.git\u001b[1full-stack-open-postgres\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~#readme",
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.3.3",
     "nodemon": "^2.0.22"
   },
   "dependencies": {
@@ -27,6 +28,7 @@
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^9.0.1",
     "pg": "^8.11.1",
-    "sequelize": "^6.32.1"
+    "sequelize": "^6.32.1",
+    "umzug": "^3.2.1"
   }
 }
