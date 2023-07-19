@@ -1,17 +1,15 @@
-# fly.toml app configuration file generated for wandering-meadow-6290 on 2023-07-01T18:59:34+02:00
+# fly.toml app configuration file generated for proud-silence-2053 on 2023-07-19T10:08:38+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "wandering-meadow-6290"
+app = "proud-silence-2053"
 primary_region = "mad"
 
-[env]
-  PORT = "8080"
-
 [http_service]
-  internal_port = 8080
+  internal_port = 3000
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
+  processes = ["app"]
